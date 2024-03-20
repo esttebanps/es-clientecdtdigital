@@ -20,6 +20,8 @@ import java.io.Serializable;
 public class ClienteCDTDigital implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    public Integer id;
     @Column(name = "tipoTelefonoPrincipal")
     private String tipoTelefonoPrincipal;
     @Column(name = "telefonoPrincipal")
@@ -89,9 +91,9 @@ public class ClienteCDTDigital implements Serializable {
     @Column(name = "envioCorrespondencia")
     private String envioCorrespondencia;
     @Column(name = "ingresosMensuales")
-    private Float ingresosMensuales = null;
+    private Integer ingresosMensuales;
     @Column(name = "patrimonio")
-    private Float patrimonio = null;
+    private Integer patrimonio;
     @Column(name = "declaracionOrigenFondos")
     private String declaracionOrigenFondos;
     @Column(name = "reconocimientoPublicoExtranjero")

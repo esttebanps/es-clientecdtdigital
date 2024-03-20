@@ -1,7 +1,6 @@
 package com.mibanco.clientecdtdigital.es.gen.type;
 
 import com.mibanco.clientecdtdigital.es.gen.type.CiudadEnum;
-import com.mibanco.clientecdtdigital.es.gen.type.ClienteBaseType;
 import com.mibanco.clientecdtdigital.es.gen.type.DepartamentoEnum;
 import com.mibanco.clientecdtdigital.es.gen.type.GeneroEnum;
 import com.mibanco.clientecdtdigital.es.gen.type.TipoActividadCIIUEnum;
@@ -17,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("ClienteCDTDigitalType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-19T15:13:06.072471-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-20T12:32:26.978289500-05:00[America/Bogota]")
 public class ClienteCDTDigitalType   {
   private @Valid String tipoTelefonoPrincipal;
   private @Valid String telefonoPrincipal;
@@ -53,8 +52,8 @@ public class ClienteCDTDigitalType   {
   private @Valid String tipoDireccionPersonal;
   private @Valid String categoriaDireccionPersonal;
   private @Valid String envioCorrespondencia;
-  private @Valid Float ingresosMensuales = null;
-  private @Valid Float patrimonio = null;
+  private @Valid Integer ingresosMensuales;
+  private @Valid Integer patrimonio;
   private @Valid String declaracionOrigenFondos;
   private @Valid Boolean reconocimientoPublicoExtranjero;
   private @Valid Boolean reconocimientoPublicoNacional;
@@ -86,8 +85,7 @@ public class ClienteCDTDigitalType   {
   private @Valid Boolean autorizacionEnvioCelularCorreo;
   private @Valid String canalEnvioCelularYCorreo;
   private @Valid String productoSolicitado;
-  private @Valid ClienteBaseType clienteBase;
-  private @Valid String codigoNovedadListas;
+  private @Valid Object codigoNovedadListas;
 
   /**
    **/
@@ -703,37 +701,37 @@ public class ClienteCDTDigitalType   {
 
   /**
    **/
-  public ClienteCDTDigitalType ingresosMensuales(Float ingresosMensuales) {
+  public ClienteCDTDigitalType ingresosMensuales(Integer ingresosMensuales) {
     this.ingresosMensuales = ingresosMensuales;
     return this;
   }
 
   
   @JsonProperty("ingresosMensuales")
-  public Float getIngresosMensuales() {
+  public Integer getIngresosMensuales() {
     return ingresosMensuales;
   }
 
   @JsonProperty("ingresosMensuales")
-  public void setIngresosMensuales(Float ingresosMensuales) {
+  public void setIngresosMensuales(Integer ingresosMensuales) {
     this.ingresosMensuales = ingresosMensuales;
   }
 
   /**
    **/
-  public ClienteCDTDigitalType patrimonio(Float patrimonio) {
+  public ClienteCDTDigitalType patrimonio(Integer patrimonio) {
     this.patrimonio = patrimonio;
     return this;
   }
 
   
   @JsonProperty("patrimonio")
-  public Float getPatrimonio() {
+  public Integer getPatrimonio() {
     return patrimonio;
   }
 
   @JsonProperty("patrimonio")
-  public void setPatrimonio(Float patrimonio) {
+  public void setPatrimonio(Integer patrimonio) {
     this.patrimonio = patrimonio;
   }
 
@@ -1297,37 +1295,19 @@ public class ClienteCDTDigitalType   {
 
   /**
    **/
-  public ClienteCDTDigitalType clienteBase(ClienteBaseType clienteBase) {
-    this.clienteBase = clienteBase;
-    return this;
-  }
-
-  
-  @JsonProperty("clienteBase")
-  public ClienteBaseType getClienteBase() {
-    return clienteBase;
-  }
-
-  @JsonProperty("clienteBase")
-  public void setClienteBase(ClienteBaseType clienteBase) {
-    this.clienteBase = clienteBase;
-  }
-
-  /**
-   **/
-  public ClienteCDTDigitalType codigoNovedadListas(String codigoNovedadListas) {
+  public ClienteCDTDigitalType codigoNovedadListas(Object codigoNovedadListas) {
     this.codigoNovedadListas = codigoNovedadListas;
     return this;
   }
 
   
   @JsonProperty("codigoNovedadListas")
-  public String getCodigoNovedadListas() {
+  public Object getCodigoNovedadListas() {
     return codigoNovedadListas;
   }
 
   @JsonProperty("codigoNovedadListas")
-  public void setCodigoNovedadListas(String codigoNovedadListas) {
+  public void setCodigoNovedadListas(Object codigoNovedadListas) {
     this.codigoNovedadListas = codigoNovedadListas;
   }
 
@@ -1408,13 +1388,12 @@ public class ClienteCDTDigitalType   {
         Objects.equals(this.autorizacionEnvioCelularCorreo, clienteCDTDigitalType.autorizacionEnvioCelularCorreo) &&
         Objects.equals(this.canalEnvioCelularYCorreo, clienteCDTDigitalType.canalEnvioCelularYCorreo) &&
         Objects.equals(this.productoSolicitado, clienteCDTDigitalType.productoSolicitado) &&
-        Objects.equals(this.clienteBase, clienteCDTDigitalType.clienteBase) &&
         Objects.equals(this.codigoNovedadListas, clienteCDTDigitalType.codigoNovedadListas);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tipoTelefonoPrincipal, telefonoPrincipal, tipoCorreoElectronico, genero, fechaNacimientoDia, fechaNacimientoMes, fechaNacimientoAno, lugarNacimientoPais, lugarNacimientoDpto, lugarNacimientoCiudad, nacionalidad, nivelConsulta, fechaExpedicionDocumentoDia, fechaExpedicionDocumentoMes, fechaExpedicionDocumentoAno, expedicionDocumentoPais, expedicionDocumentoDpto, expedicionDocumentoCiudad, paisResidencia, subActividadEconomica, ocupacion, actividadEconomicaCIIU, sectorEconomico, registroBiometria, causalNoBiometria, direccionPersonal, direccionPersonalPais, direccionPersonalDpto, direccionPersonalCiudad, barrioDireccionPersonal, usoDireccionPersonal, tipoDireccionPersonal, categoriaDireccionPersonal, envioCorrespondencia, ingresosMensuales, patrimonio, declaracionOrigenFondos, reconocimientoPublicoExtranjero, reconocimientoPublicoNacional, segmento, nicho, canalContactoPreferido, asesorComercial, tipoVinculacion, porqueMedioSeEnteroDeNosotros, agenciaVinculacion, fechaDiligenciamientoFormularioDia, fechaDiligenciamientoFormularioMes, fechaDiligenciamientoFormularioAno, fechaVinculacionDia, fechaVinculacionMes, fechaVinculacionAno, lugarDiligenciamientoFormularioPais, lugarDiligenciamientoFormularioDpto, lugarDiligenciamientoFormularioCiudad, residenteFiscalEnOtroPais, identificacionFiscal1, direccionExtranjero, tin1, residenciaFiscalPais, clasificacionFatca, fechaClasificacionFatca, clasificacionCRS, fechaClasificacionCRS, autorizacionEnvioCelularCorreo, canalEnvioCelularYCorreo, productoSolicitado, clienteBase, codigoNovedadListas);
+    return Objects.hash(tipoTelefonoPrincipal, telefonoPrincipal, tipoCorreoElectronico, genero, fechaNacimientoDia, fechaNacimientoMes, fechaNacimientoAno, lugarNacimientoPais, lugarNacimientoDpto, lugarNacimientoCiudad, nacionalidad, nivelConsulta, fechaExpedicionDocumentoDia, fechaExpedicionDocumentoMes, fechaExpedicionDocumentoAno, expedicionDocumentoPais, expedicionDocumentoDpto, expedicionDocumentoCiudad, paisResidencia, subActividadEconomica, ocupacion, actividadEconomicaCIIU, sectorEconomico, registroBiometria, causalNoBiometria, direccionPersonal, direccionPersonalPais, direccionPersonalDpto, direccionPersonalCiudad, barrioDireccionPersonal, usoDireccionPersonal, tipoDireccionPersonal, categoriaDireccionPersonal, envioCorrespondencia, ingresosMensuales, patrimonio, declaracionOrigenFondos, reconocimientoPublicoExtranjero, reconocimientoPublicoNacional, segmento, nicho, canalContactoPreferido, asesorComercial, tipoVinculacion, porqueMedioSeEnteroDeNosotros, agenciaVinculacion, fechaDiligenciamientoFormularioDia, fechaDiligenciamientoFormularioMes, fechaDiligenciamientoFormularioAno, fechaVinculacionDia, fechaVinculacionMes, fechaVinculacionAno, lugarDiligenciamientoFormularioPais, lugarDiligenciamientoFormularioDpto, lugarDiligenciamientoFormularioCiudad, residenteFiscalEnOtroPais, identificacionFiscal1, direccionExtranjero, tin1, residenciaFiscalPais, clasificacionFatca, fechaClasificacionFatca, clasificacionCRS, fechaClasificacionCRS, autorizacionEnvioCelularCorreo, canalEnvioCelularYCorreo, productoSolicitado, codigoNovedadListas);
   }
 
   @Override
@@ -1489,7 +1468,6 @@ public class ClienteCDTDigitalType   {
     sb.append("    autorizacionEnvioCelularCorreo: ").append(toIndentedString(autorizacionEnvioCelularCorreo)).append("\n");
     sb.append("    canalEnvioCelularYCorreo: ").append(toIndentedString(canalEnvioCelularYCorreo)).append("\n");
     sb.append("    productoSolicitado: ").append(toIndentedString(productoSolicitado)).append("\n");
-    sb.append("    clienteBase: ").append(toIndentedString(clienteBase)).append("\n");
     sb.append("    codigoNovedadListas: ").append(toIndentedString(codigoNovedadListas)).append("\n");
     sb.append("}");
     return sb.toString();

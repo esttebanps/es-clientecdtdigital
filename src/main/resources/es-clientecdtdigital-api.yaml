@@ -123,9 +123,9 @@ components:
         envioCorrespondencia:
           type: string
         ingresosMensuales:
-          type: float
+          type: integer
         patrimonio:
-          type: float
+          type: integer
         declaracionOrigenFondos:
           type: string
         reconocimientoPublicoExtranjero:
@@ -190,10 +190,8 @@ components:
           type: string
         productoSolicitado:
           type: string
-        clienteBase:
-          $ref: "#/components/schemas/ClienteBaseType"
         codigoNovedadListas:
-          type: string
+          type: object
     GeneroEnum:
       type: string
       enum:
@@ -301,69 +299,3 @@ components:
           descripcion: "OTROS CULTIVOS TRANSITORIOS N.C.P."
         - codigo: "0121"
           descripcion: "CULTIVO DE FRUTAS TROPICALES Y SUBTROPICALES"
-    ClienteBaseType:
-      type: object
-      properties:
-        numeroCliente:
-          type: integer
-        tipoPersona:
-          $ref: "#/components/schemas/TipoPersonaEnum"
-        tipoDocumento:
-          $ref: "#/components/schemas/TipoDocumentoEnum"
-        numeroDocumento:
-          type: integer
-        fechaExpedicionDocumento:
-          type: string
-          format: Date
-        primerNombre:
-          type: string
-        numeroCelular:
-          type: integer
-        segundoNombre:
-          type: string
-        primerApellido:
-          type: string
-        segundoApellido:
-          type: string
-        correoElectronico:
-          type: string
-    TipoPersonaEnum:
-      type: string
-      properties:
-        codigo:
-          type: string
-        descripcion:
-          type: string
-        enum:
-          - codigo: "1"
-            descripcion: "JURÍDICA"
-          - codigo: "2"
-            descripcion: "NATURAL"
-    TipoDocumentoEnum:
-      type: string
-      properties:
-        codigo:
-          type: string
-        descripcion:
-          type: string
-        enum:
-          - codigo: "CC"
-            descripcion: "CEDULA DE CIUDADANÍA"
-          - codigo: "TI"
-            descripcion: "TARJETA DE IDENTIDAD"
-          - codigo: "CDI"
-            descripcion: "CARNE DIPLOMATICO"
-          - codigo: "CE"
-            descripcion: "CEDULA DE EXTRANJERÍA"
-          - codigo: "CPA"
-            descripcion: "CEDULA PAISES ANDINOS"
-          - codigo: "NIT"
-            descripcion: "NUMERO DE IDENTIFICACION TRIBUTARIA"
-          - codigo: "PAS"
-            descripcion: "PASAPORTE"
-          - codigo: "RCN"
-            descripcion: "REGISTRO CIVIL"
-          - codigo: "RUT"
-            descripcion: "REGISTRO UNICO TRIBUTARIO"
-          - codigo: "TE"
-            descripcion: "TERCEROS DEL EXTERIOR SIN DOMICILIO"
