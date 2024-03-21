@@ -32,6 +32,7 @@ public class ClienteCDTDigitalController implements V1ClientecdtdigitalApi {
         return Response.status(Response.Status.ACCEPTED).entity(clienteCDTDigitalTypeResponse).build();
     }
 
+
     @Override
     public Response crearClienteCDTDigital(ClienteCDTDigitalType clienteCDTDigitalType) {
         LOG.info("Inicio crearClienteCdtDigital controller");
