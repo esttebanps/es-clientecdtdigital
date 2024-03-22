@@ -1,13 +1,10 @@
 package com.mibanco.clientecdtdigital.es.entity;
 
-import com.mibanco.clientecdtdigital.es.gen.type.*;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
 
 import java.io.Serializable;
 
@@ -29,7 +26,7 @@ public class ClienteCDTDigital implements Serializable {
     @Column(name = "tipoCorreoElectronico")
     private String tipoCorreoElectronico;
     @Column(name = "genero")
-    private GeneroEnum genero;
+    private String genero;
     @Column(name = "fechaNacimientoDia")
     private Integer fechaNacimientoDia;
     @Column(name = "fechaNacimientoMes")
@@ -39,9 +36,9 @@ public class ClienteCDTDigital implements Serializable {
     @Column(name = "lugarNacimientoPais")
     private String lugarNacimientoPais;
     @Column(name = "lugarNacimientoDpto")
-    private DepartamentoEnum lugarNacimientoDpto;
+    private String lugarNacimientoDpto;
     @Column(name = "lugarNacimientoCiudad")
-    private CiudadEnum lugarNacimientoCiudad;
+    private String lugarNacimientoCiudad;
     @Column(name = "nacionalidad")
     private String nacionalidad;
     @Column(name = "nivelConsulta")
@@ -55,9 +52,9 @@ public class ClienteCDTDigital implements Serializable {
     @Column(name = "expedicionDocumentoPais")
     private String expedicionDocumentoPais;
     @Column(name = "expedicionDocumentoDpto")
-    private DepartamentoEnum expedicionDocumentoDpto;
+    private String expedicionDocumentoDpto;
     @Column(name = "expedicionDocumentoCiudad")
-    private CiudadEnum expedicionDocumentoCiudad;
+    private String expedicionDocumentoCiudad;
     @Column(name = "paisResidencia")
     private String paisResidencia;
     @Column(name = "subActividadEconomica")
@@ -65,7 +62,7 @@ public class ClienteCDTDigital implements Serializable {
     @Column(name = "ocupacion")
     private String ocupacion;
     @Column(name = "actividadEconomicaCIIU")
-    private TipoActividadCIIUEnum actividadEconomicaCIIU;
+    private String actividadEconomicaCIIU;
     @Column(name = "sectorEconomico")
     private String sectorEconomico;
     @Column(name = "registroBiometria")
@@ -77,9 +74,9 @@ public class ClienteCDTDigital implements Serializable {
     @Column(name = "direccionPersonalPais")
     private String direccionPersonalPais;
     @Column(name = "direccionPersonalDpto")
-    private DepartamentoEnum direccionPersonalDpto;
+    private String direccionPersonalDpto;
     @Column(name = "direccionPersonalCiudad")
-    private CiudadEnum direccionPersonalCiudad;
+    private String direccionPersonalCiudad;
     @Column(name = "barrioDireccionPersonal")
     private String barrioDireccionPersonal;
     @Column(name = "usoDireccionPersonal")
@@ -129,9 +126,9 @@ public class ClienteCDTDigital implements Serializable {
     @Column(name = "lugarDiligenciamientoFormularioPais")
     private String lugarDiligenciamientoFormularioPais;
     @Column(name = "lugarDiligenciamientoFormularioDpto")
-    private DepartamentoEnum lugarDiligenciamientoFormularioDpto;
+    private String lugarDiligenciamientoFormularioDpto;
     @Column(name = "lugarDiligenciamientoFormularioCiudad")
-    private CiudadEnum lugarDiligenciamientoFormularioCiudad;
+    private String lugarDiligenciamientoFormularioCiudad;
     @Column(name = "residenteFiscalEnOtroPais")
     private Boolean residenteFiscalEnOtroPais;
     @Column(name = "identificacionFiscal1")

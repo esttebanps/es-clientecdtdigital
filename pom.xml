@@ -107,45 +107,6 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.openapitools</groupId>
-        <artifactId>openapi-generator-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <configuration>
-
-              <generatorName>jaxrs-spec</generatorName>
-              <library>quarkus</library>
-              <additionalProperties>interfaceOnly=true,useSwaggerAnnotations=true</additionalProperties>
-              <groupId>${project.groupId}</groupId>
-              <artifactId>${project.artifactId}</artifactId>
-              <artifactVersion>${project.version}</artifactVersion>
-              <output>${project.basedir}</output>
-              <skipOverwrite>false</skipOverwrite>
-              <generateSupportingFiles>false</generateSupportingFiles>
-              <generateModels>true</generateModels>
-              <inputSpec>src/main/resources/es-clientecdtdigital-api.yaml</inputSpec>
-              <apiNameSuffix>ClientecdtdigitalApi</apiNameSuffix>
-              <skipValidateSpec>true</skipValidateSpec>
-              <configOptions>
-                <useJakartaEe>true</useJakartaEe>
-                <dateLibrary>java8</dateLibrary>
-                <modelPackage>com.mibanco.clientecdtdigital.es.gen.type</modelPackage>
-                <invokerPackage>com.mibanco.clientecdtdigital.es.gen</invokerPackage>
-                <apiPackage>com.mibanco.clientecdtdigital.es.gen.contract</apiPackage>
-                <sourceFolder>src/main/java</sourceFolder>
-                <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
-                <generateAdditionalProperties>true</generateAdditionalProperties>
-                <validateSpec>false</validateSpec>
-                <returnResponse>true</returnResponse>
-              </configOptions>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>${quarkus.platform.group-id}</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
         <version>${quarkus.platform.version}</version>
