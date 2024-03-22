@@ -5,10 +5,7 @@ import com.mibanco.clientecdtdigital.es.service.implemt.ClienteCDTDigitalImpl;
 import com.mibanco.clientecdtdigital.es.utils.ApplicationException;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Response;
-import org.eclipse.microprofile.graphql.Description;
-import org.eclipse.microprofile.graphql.GraphQLApi;
-import org.eclipse.microprofile.graphql.Mutation;
-import org.eclipse.microprofile.graphql.Query;
+import org.eclipse.microprofile.graphql.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,10 +26,15 @@ public class ClienteCDTDigitalController {
         return clienteCDTDigitalImpl.crearClienteCDTDigital(clienteCDTDigital);
     }
 
+    @Mutation
+    @Description("Actualizar ClienteCDTDigital")
+    public ClienteCDTDigital actualizarClienteCDTDigital(Integer id, ClienteCDTDigital clienteCDTDigital){
+        return clienteCDTDigitalImpl.actualizarClienteCDTDigital(id,clienteCDTDigital);
+    }
+
     @Query
     @Description("Obtener ClienteCDTDigital")
     public List<ClienteCDTDigital> obtenerClienteCDTDigital(){
         return clienteCDTDigitalImpl.obtenerClienteCDTDigital();
     }
-
 }
