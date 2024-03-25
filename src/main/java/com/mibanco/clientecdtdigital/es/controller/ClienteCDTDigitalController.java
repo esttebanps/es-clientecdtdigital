@@ -23,18 +23,56 @@ public class ClienteCDTDigitalController {
     @Mutation
     @Description("Crear ClienteCDTDigital")
     public ClienteCDTDigital crearClienteCDTDigital(ClienteCDTDigital clienteCDTDigital){
-        return clienteCDTDigitalImpl.crearClienteCDTDigital(clienteCDTDigital);
+        LOG.info("Inicio crearClienteCDTDigital controller");
+        try{
+            ClienteCDTDigital cliente = clienteCDTDigitalImpl.crearClienteCDTDigital(clienteCDTDigital);
+            LOG.info("Fin crearClienteCDTDigital controller");
+            return cliente;
+        } catch (ApplicationException e){
+            LOG.error("Se presento un error en el metodo crearClienteCDTDigital controller" + e.getMessage());
+            throw new ApplicationException(ERROR_SERVICIO + e.getMessage() + "crearClienteCDTDigital controller");
+        }
     }
 
     @Mutation
     @Description("Actualizar ClienteCDTDigital")
     public ClienteCDTDigital actualizarClienteCDTDigital(Integer id, ClienteCDTDigital clienteCDTDigital){
-        return clienteCDTDigitalImpl.actualizarClienteCDTDigital(id,clienteCDTDigital);
+        LOG.info("Inicio actualizarClienteCDTDigital controller");
+        try{
+            ClienteCDTDigital cliente = clienteCDTDigitalImpl.actualizarClienteCDTDigital(id,clienteCDTDigital);
+            LOG.info("Fin actualizarClienteCDTDigital controller");
+            return cliente;
+        } catch (ApplicationException e){
+            LOG.error("Se presento un error en el metodo actualizarClienteCDTDigital controller" + e.getMessage());
+            throw new ApplicationException(ERROR_SERVICIO + e.getMessage() + "actualizarClienteCDTDigital controller");
+        }
     }
 
     @Query
     @Description("Obtener ClienteCDTDigital")
     public List<ClienteCDTDigital> obtenerClienteCDTDigital(){
-        return clienteCDTDigitalImpl.obtenerClienteCDTDigital();
+        LOG.info("Inicio obtenerClienteCDTDigital controller");
+        try {
+            List<ClienteCDTDigital> clientes = clienteCDTDigitalImpl.obtenerClienteCDTDigital();
+            LOG.info("Fin obtenerClienteCDTDigital controller");
+            return clientes;
+        } catch (ApplicationException e){
+            LOG.error("Se presento un error en el metodo obtenerClienteCDTDigital controller" + e.getMessage());
+            throw new ApplicationException(ERROR_SERVICIO + e.getMessage() + "obtenerClienteCDTDigital controller");
+        }
+    }
+
+    @Mutation
+    @Description("Eliminar ClienteCDTDigital")
+    public boolean eliminarClienteCDTDigital(@Name("id") Integer id){
+        LOG.info("Inicio eliminarClienteCDTDigital controller");
+        try {
+            boolean cliente = clienteCDTDigitalImpl.eliminarClienteCDTDigital(id);
+            LOG.info("Fin eliminarClienteCDTDigital controller");
+            return cliente;
+        } catch (ApplicationException e){
+            LOG.error("Se presento un error en el metodo eliminarClienteCDTDigital controller" + e.getMessage());
+            throw new ApplicationException(ERROR_SERVICIO + e.getMessage() + "eliminarClienteCDTDigital controller");
+        }
     }
 }
