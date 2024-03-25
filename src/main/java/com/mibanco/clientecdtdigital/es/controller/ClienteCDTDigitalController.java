@@ -10,6 +10,8 @@ import jakarta.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+
 import static com.mibanco.clientecdtdigital.es.constant.Constant.ERROR_SERVICIO;
 
 
@@ -26,7 +28,7 @@ public class ClienteCDTDigitalController implements V1ClientecdtdigitalApi {
             Long idCliente = Long.valueOf(id);
             clienteCDTDigitalImpl.actualizarClienteCDTDigital(idCliente, clienteCDTDigitalTypeResponse);
         } catch (ApplicationException e) {
-            LOG.error("Se presento un error en el metodo actualizarClienteCDTDigital Impl" + e.getMessage());
+            LOG.error("Se presento un error en el metodo actualizarClienteCDTDigital controller" + e.getMessage());
             throw new ApplicationException(ERROR_SERVICIO + e.getMessage() + "actualizarClienteCDTDigital controller");
         }
         return Response.status(Response.Status.ACCEPTED).entity(clienteCDTDigitalTypeResponse).build();
@@ -39,7 +41,7 @@ public class ClienteCDTDigitalController implements V1ClientecdtdigitalApi {
             clienteCDTDigitalImpl.crearClienteCDTDigital(clienteCDTDigitalType);
             LOG.info("Fin crearClienteCdtDigital controller");
         } catch (ApplicationException e) {
-            LOG.error("Se presento un error en el metodo CrearClienteCDTDigital Impl" + e.getMessage());
+            LOG.error("Se presento un error en el metodo CrearClienteCDTDigital controller" + e.getMessage());
             throw new ApplicationException(ERROR_SERVICIO + e.getMessage() + "crearClienteCdtDigital controller");
         }
         return Response.status(Response.Status.CREATED).entity(clienteCDTDigitalType).build();
@@ -51,10 +53,25 @@ public class ClienteCDTDigitalController implements V1ClientecdtdigitalApi {
         try {
             Long idCliente = Long.valueOf(id);
             clienteCDTDigitalImpl.eliminarClienteCDTDigital(idCliente);
+            LOG.info("Fin eliminarClienteCDTDigital controller");
         } catch (ApplicationException e) {
-            LOG.error("Se presento un error en el metodo eliminarClienteCDTDigital Impl" + e.getMessage());
+            LOG.error("Se presento un error en el metodo eliminarClienteCDTDigital controller" + e.getMessage());
             throw new ApplicationException(ERROR_SERVICIO + e.getMessage() + "eliminarClienteCDTDigital controller");
         }
         return Response.status(Response.Status.OK).build();
+    }
+
+    @Override
+    public Response obtenerClienteCDTDigital() {
+        LOG.info("Inicio obtenerClienteCDTDigital controller");
+        List<ClienteCDTDigitalTypeResponse> clientes;
+        try {
+            clientes = clienteCDTDigitalImpl.obtenerClienteCDTDigital();
+            LOG.info("Fin obtenerClienteCDTDigital controller");
+        } catch (ApplicationException e) {
+            LOG.error("Se presento un error en el metodo obtenerClienteCDTDigital controller" + e.getMessage());
+            throw new ApplicationException(ERROR_SERVICIO + e.getMessage() + "obtenerClienteCDTDigital controller");
+        }
+        return Response.status(Response.Status.OK).entity(clientes).build();
     }
 }

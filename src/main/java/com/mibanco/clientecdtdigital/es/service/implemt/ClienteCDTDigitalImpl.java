@@ -14,6 +14,8 @@ import jakarta.transaction.Transactional;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
+import java.util.List;
+
 import static com.mibanco.clientecdtdigital.es.constant.Constant.ERROR_SERVICIO;
 
 
@@ -67,6 +69,19 @@ public class ClienteCDTDigitalImpl implements IClienteCDTDigital {
         } catch (ApplicationException e) {
             LOG.error("Se presento un error en el metodo eliminarClienteCDTDigital Impl" + e.getMessage());
             throw new ApplicationException(ERROR_SERVICIO + e.getMessage() + "eliminarClienteCDTDigital Impl");
+        }
+    }
+
+    public List<ClienteCDTDigitalTypeResponse> obtenerClienteCDTDigital(){
+        LOG.info("Inicio obtenerClienteCDTDigital impl");
+        try{
+            List<ClienteCDTDigital> clientes = clienteCDTDigitalDao.listAll();
+            List<ClienteCDTDigitalTypeResponse> clientesResponse = clienteCDTDigitalMapper.usuariosTypeListEntityToTypeResponse(clientes);
+            LOG.info("Fin obtenerClienteCDTDigital impl");
+            return clientesResponse;
+        } catch (ApplicationException e) {
+            LOG.error("Se presento un error en el metodo obtenerClienteCDTDigital Impl" + e.getMessage());
+            throw new ApplicationException(ERROR_SERVICIO + e.getMessage() + "obtenerClienteCDTDigital Impl");
         }
     }
 }

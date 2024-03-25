@@ -17,7 +17,7 @@ import jakarta.validation.Valid;
 
 
 @Path("/v1/es")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-21T15:59:00.734793900-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2024-03-25T11:38:42.553677800-05:00[America/Bogota]", comments = "Generator version: 7.4.0")
 public interface V1ClientecdtdigitalApi {
 
     @PUT
@@ -35,4 +35,8 @@ public interface V1ClientecdtdigitalApi {
     @DELETE
     @Path("/eliminar/ClienteCDTDigital/{id}")
     Response eliminarClienteCDTDigital(@PathParam("id") @Min(1) Integer id);
+
+    @GET
+    @Path("/ClientesCDTDigital")
+    Response obtenerClienteCDTDigital();
 }

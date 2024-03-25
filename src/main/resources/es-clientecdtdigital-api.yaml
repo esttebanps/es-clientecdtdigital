@@ -101,6 +101,17 @@ paths:
           description: "Parámetros de entrada no validos."
         "404":
           description: "No se encuentra la novedad."
+  #Obtener CleinteCDTDigital
+  /v1/es/ClientesCDTDigital:
+    get:
+      tags:
+        - Obtener lista ClienteCDTDigital
+      operationId: obtenerClienteCDTDigital
+      responses:
+        "200":
+          description: "Parámetros de entrada no validos."
+        "404":
+          description: "No se encuentra la novedad."
 #---------------------------------------------
 #Se declaran los Modelos/Schemas del servicio
 #---------------------------------------------
