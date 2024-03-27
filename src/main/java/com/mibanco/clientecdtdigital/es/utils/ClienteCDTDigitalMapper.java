@@ -1,31 +1,26 @@
 package com.mibanco.clientecdtdigital.es.utils;
 
+import com.mibanco.clientecdtdigital.es.dto.ClienteCDTDigitalRequest;
 import com.mibanco.clientecdtdigital.es.entity.ClienteCDTDigital;
-import com.mibanco.clientecdtdigital.es.gen.type.ClienteCDTDigitalType;
-import com.mibanco.clientecdtdigital.es.gen.type.ClienteCDTDigitalTypeResponse;
-import jakarta.enterprise.context.ApplicationScoped;
+import com.mibanco.clientecdtdigital.es.proto.service.Cliente;
+import org.mapstruct.Mapper;
 import org.modelmapper.ModelMapper;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@ApplicationScoped
+@Mapper(componentModel = "jakarta")
 public class ClienteCDTDigitalMapper {
 
-    public ClienteCDTDigital clienteCDTDigitalTypeToEntity(ClienteCDTDigitalType ClienteCDTDigitalType){
-        return new ModelMapper().map(ClienteCDTDigitalType, ClienteCDTDigital.class);
+    public ClienteCDTDigital clienteCDTDigitalTypeToEntity(Cliente cliente){
+        ClienteCDTDigital clienteCDTDigital = new ClienteCDTDigital();
+        clienteCDTDigital.setTipoCorreoElectronico(cliente.getTipoCorreoElectronico());
+        clienteCDTDigital.setTelefonoPrincipal(cliente.getTelefonoPrincipal());
+        return clienteCDTDigital;
+    }
+    public Cliente entityToClienteCDTDigitalType(ClienteCDTDigital clienteCDTDigital){
+        return new ModelMapper().map(clienteCDTDigital, Cliente.class);
     }
 
-    public ClienteCDTDigital clienteCDTDigitalTypeResponseToEntity(ClienteCDTDigitalTypeResponse ClienteCDTDigitalTypeResponse){
-        return new ModelMapper().map(ClienteCDTDigitalTypeResponse, ClienteCDTDigital.class);
+    public Cliente clienteCDTDigitalRequestToCliente(ClienteCDTDigitalRequest clienteCDTDigitalRequest){
+        return  new  ModelMapper().map(clienteCDTDigitalRequest, Cliente.class);
     }
 
-    public List<ClienteCDTDigitalTypeResponse> usuariosTypeListEntityToTypeResponse(List<ClienteCDTDigital> clientes) {
-        List<ClienteCDTDigitalTypeResponse> responses = new ArrayList<>();
-        for (ClienteCDTDigital cliente : clientes) {
-            ClienteCDTDigitalTypeResponse response = new ModelMapper().map(cliente, ClienteCDTDigitalTypeResponse.class);
-            responses.add(response);
-        }
-        return responses;
-    }
 }
